@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #4e73df;
+  --light-gray: #f8f9fc;
+  --dark-gray: #5a5c69;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--light-gray);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input {
+  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-form button:hover {
+  background-color: #f1f1f1;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: calc(25% - 20px);
+  min-width: 250px;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-link {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.info-item {
+  font-size: 12px;
+}
+
+.info-item b {
+  display: block;
+  font-size: 14px;
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--primary-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
